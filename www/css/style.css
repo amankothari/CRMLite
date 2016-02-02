@@ -1,0 +1,137 @@
+/* Empty. Add your own CSS if you like */
+/*.item {
+  font-size: 14px !important;
+}*/
+    .h2 {
+color: #2586C6!important;
+/* font-weight: 500; */
+/* font-weight: bold; */
+font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+line-height: 1.2;
+}
+    .as{  background-image:url('../img/Slider/transprnt.png')}   
+        .Backgroundimage {
+            background-image: url('../img/Slider/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            height: 100%;
+            background-size: cover;
+        }  
+        .Background {
+                    background-image: url('../img/Slider/welcomeScreenBackground.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    height: 100%;
+                    background-size: cover;
+                }                                 
+.company-logo {
+    vertical-align: middle;
+    max-width: 80%;
+    width:80%;
+    /*content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/256302/ionic-logo-white.png");*/
+    /*content: url('http://m.webfortis.in/img/web-fortis-logo21.png');*/
+}
+  .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
+            font-size: 20px !important;
+        }
+  .list {
+position: relative;
+padding-top: 1px;
+padding-bottom: 1px;
+padding-left: 0;
+margin-bottom: 0px!important;
+}
+a.item {
+color: inherit;
+text-decoration: none;
+font-size: 16px!important;
+}
+.bar.bar-stable .title {
+color: #FEFBFB!important;
+text-shadow: 0px 0px 0px rgba(255, 255, 255, 1);
+text-align:center;
+left:0px!important;
+/*padding-left: 34px;*/
+width: 100%;
+}
+.bar-stable .button.button-clear {
+border-color: transparent;
+background: none;
+box-shadow: none;
+color: #FFF !important;
+font-size: 17px;
+text-align:center;
+}
+.item-input-inset {
+   background-color: rgb(205, 205, 205)!important;
+ }
+    /*textarea css*/
+    textarea {
+  height:auto;
+  max-width:600px;
+  color:#999;
+  font-weight:400;
+  font-size:14px;
+  font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+  width:100%;
+  background:#fff;
+  border-radius:3px;
+  line-height:2em;
+  border:none;
+  box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);
+  padding:30px;
+transition: height 2s ease;
+}
+
+.button.button-positive1 {
+border-color:#FFFFFF; 
+background-color: #FFFFFF;
+ color: #fff;
+}
+
+ #p {
+        text-align: center;
+        margin-top: 200px !important;
+    }
+ #p1 {
+        text-align: center;
+        margin-top: 200px !important;
+    }
+    .spinner svg {
+        width: 19% !important;
+        height: 85px !important;
+    }
+    .item-avatar i:first-child, .item-avatar .item-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; }
+
+ form i.icon.error {
+  color: #ef4e3a; }
+
+form input + i.icon.error {
+  display: none;
+  margin-left:0px; }
+
+form.ng-submitted input.ng-invalid + i.icon.error {
+  display: block; }
+
+form .has-error {
+  border-left: 5px solid #cc2511; }
+
+form .has-success {
+  border-left: 5px solid #3d8b3d; }
+
+form.ng-submitted input.ng-valid + i.icon.error {
+  display: none; }
+
+ /*.loading-container .loading {
+    background-color:  transparent !important;
+     }*/

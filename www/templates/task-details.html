@@ -1,0 +1,57 @@
+﻿<ion-view title="My Task Details">
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon ion-android-create" title="Edit task" info="popover" info_place="bottom" style="color:white;font-size:24px!important;" ng-click="Edit(singletask.activityid)"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <div class="list">
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="img/Taskdetails.png">
+                    <h2 style="font-size: 21px!important;">Regards :{{singletask.regardingobjectid}}</h2>
+                    <p style="color:#2586C6">  Scheduled to Start {{singletask.scheduledstart|date:'dd/MM/yyyy'}}</p>
+                    <p style="color:#2586C6">  Scheduled to End {{singletask.scheduledend|date:'dd/MM/yyyy'}} </p>
+                </a>
+            </div>            
+            <span class="item" style="white-space:pre-line">
+               Subject : {{singletask.subject}}
+            </span>
+
+            <div class="list">
+                <div class="item item-divider" style="background-color: #E8E8E8; text-transform: capitalize;">
+                   {{singletask.logicalname==""?"Account":singletask.logicalname}}
+                </div>
+                <a class="item item-icon-left item-icon-right" href="#" style="padding-left: 15px!important; padding-top: 9px; padding-bottom: 9px; color: black;">
+                    <strong style="vertical-align: sub;color:red;font-size:13px">Name : {{singletask.regardingobjectid==""?"Name is not available":singletask.regardingobjectid}}</strong><br />
+                    <span style="vertical-align: sub;color:#888383;font-size:13px">Assigned to : {{singletask.ownerid}}</span><br />
+                    <span style="color:#888383;font-size:13px; text-align:right">Duration :&nbsp;{{singletask.actualdurationminutes==""?"Duration Unknown" :singletask.actualdurationminutes}}</span><br />
+                </a>
+            </div>
+            <ion-list class="list">
+                <div class="item item-divider" style="background-color: #E8E8E8; text-transform: capitalize;">
+                   slide to complete task
+                </div>
+                <ion-item class="item item-icon-right" href="" style="color: black;">                 
+                    Task Status &nbsp;<strong style="color:seagreen">{{singletask.statecode==0?" Open":"Close"}}</strong>
+                    <ion-option-button class="button-positive" style="background-color:seagreen" ng-click="Completed(singletask.activityid)">&nbsp;Completed &nbsp;</ion-option-button>
+                </ion-item>
+            </ion-list>
+            <span class="item" >
+                 Description : <span style="white-space:pre-line">{{singletask.description}}</span>
+             </span>
+
+            <span class="item">
+               Owner name : {{singletask.ownerid}}
+            </span>         
+            <span class="item">
+                Created date : {{singletask.createdon|date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Updated date : {{singletask.modifiedon|date:'MM/dd/yyyy'}}
+            </span>
+            
+            <span class="item">
+                Created by : {{singletask.createdby}}
+            </span>
+        </div>
+    </ion-content>
+</ion-view>

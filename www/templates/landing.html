@@ -1,0 +1,57 @@
+<ion-view hide-nav-bar="true" class="Background">
+    <style>
+          .vikashfalse {
+       z-index: 11;
+       /*position: fixed;*/
+       bottom: 0px!important;
+      width: 100%;   
+}
+          /*.scroll-content {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+overflow: hidden;
+margin-top: -1px;
+padding-top: 1px;
+margin-bottom: -1px;
+width: auto;
+height: aut
+}*/
+    </style>
+    <!--<ion-scroll direction="x" style=" height: 500px;bottom: 0px!important; top:initial!important;">-->
+        <ion-content overflow-scroll="true" onscroll="true" style="bottom: 0px!important; top:initial!important;height:400px">
+            <div class="row" style="height:auto">
+                <div class="col" style="height:auto">
+                    <div class="custom" style="height:auto">
+                        <form name="userForm" novalidate="novalidate" on-valid-submit="Login(loginData)">
+                            <div class="list" style="background-image:url('img/Slider/transprnt.png')!important;">
+                                <label class="item item-input item-stacked-label validated" style="border-color: transparent!important;background-color: transparent!important;color: #4d4d4d!important;">
+                                    <span class="input-label" style="display: table;padding: 7px 10px 7px 0px; max-width: 200px;width: 35%; color: #F8F8F8!important; font-size: 16px;">Name</span>
+                                    <input style="background-color: transparent!important; height: 40px; border-bottom: 1px solid white; width: 95%; color: white;" type="text" ng-model="loginData.customername" placeholder="" required />
+                                    <i class="icon ion-alert-circled error"></i>
+                                </label>
+                                <label class="item item-input item-stacked-label validated" style="border-color: transparent!important;background-color: transparent!important;color: #4d4d4d!important;">
+                                    <span class="input-label" style="display: table;padding: 7px 10px 7px 0px; max-width: 200px;width: 35%; color: #F8F8F8!important; font-size: 16px;">Email-Id</span>
+                                    <input style=" background-color: transparent!important; height: 40px; border-bottom: 1px solid white; width: 95%; color: white;" type="email" ng-model="loginData.email" placeholder="" required />
+                                    <i class="icon ion-alert-circled error"></i>
+                                </label>
+                                <label class="item item-input item-stacked-label validated" style="border-color: transparent!important;background-color: transparent!important;color: #4d4d4d!important;">
+                                    <span class="input-label" style="display: table;padding: 7px 10px 7px 0px; max-width: 200px;width: 35%; color: #F8F8F8!important; font-size: 16px;">Mobile Number</span>
+                                    <input style=" background-color: transparent!important; height: 40px; border-bottom: 1px solid white; width: 95%; color: white;" type="tel" ng-pattern="/^[1-9]{1}[0-9]{9}$/" ng-model="loginData.mobile" placeholder="" required />
+                                    <i class="icon ion-alert-circled error"></i>
+                                </label>
+                            </div>
+                            <div class="list" style="background-image:url('img/Slider/transprnt.png')!important">
+                                <ul class="list">
+                                    <li><button class="button button-block button-stable" style="background-color: #4d76ba !important;border:0px; color:white; height:52px;font-size:22px" type="submit">Next</button></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+     </ion-content>
+     <!--</ion-scroll>-->
+</ion-view>

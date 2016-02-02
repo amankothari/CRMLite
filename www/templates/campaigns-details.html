@@ -1,0 +1,56 @@
+﻿<ion-view title="My Campaign">
+    <ion-content has-header="true" padding="true">
+    </ion-content>
+    <ion-content>
+        <div class="list">
+            <div class="list">
+                <a class="item item-thumbnail-left" >
+                    <img src="img/Campaigndetails.png">
+                    <h2 style="font-size: 21px!important;">{{singlecampign.name}}</h2>
+                    <p> Expected Revenue : {{singlecampign.expectedrevenue=="" ? "0.00":singlecampign.expectedrevenue}}<span style="color:blue">&nbsp;&nbsp;{{singlecampign.transactioncurrencyid}}</span></p>
+                </a>
+            </div>  
+            <span class="item">
+               Start Date  <br /> {{singlecampign.actualstart=="" ? "00/00/0000":singlecampign.actualstart |date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+              Proposed Start Date  <br /> {{singlecampign.proposedstart=="" ? "00/00/0000":singlecampign.proposedstart |date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                End Date  <br /> {{singlecampign.actualend  |date:'MM/dd/yyyy'}}
+            </span>          
+            <span class="item">
+                Proposed End Date  <br /> {{singlecampign.proposedend=="" ? "00/00/0000":singlecampign.proposedend |date:'MM/dd/yyyy'}}
+            </span>
+          
+            <span class="item">
+                Budgeted Cost :  {{singlecampign.budgetedcost=="" ? "0.00":singlecampign.budgetedcost}}<span style="color:blue">&nbsp;&nbsp;{{singlecampign.transactioncurrencyid}}</span>
+            </span>
+            <span class="item">
+                Total Actual Cost : {{singlecampign.totalactualcost=="" ? "0.00": singlecampign.totalactualcost}}<span style="color:blue">&nbsp;&nbsp;{{singlecampign.transactioncurrencyid}}</span>
+            </span>
+           
+            <span class="item">
+                Description <br /> {{singlecampign.description=="" ? "No Information Found":singlecampign.description }}
+            </span>
+            <div class="item item-divider" style="background-color: #E8E8E8;">
+                OWNER INFORMATION
+            </div>
+            <span class="item">
+                Owner <br /> {{singlecampign.ownerid}}
+            </span>
+            <span class="item">
+                Created date <br /> {{singlecampign.createdon |date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Created by <br /> {{singlecampign.createdby}}
+            </span>
+            <span class="item">
+                Updated date <br /> {{singlecampign.modifiedon |date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Updated by <br /> {{singlecampign.modifiedby}}
+            </span>
+        </div>
+    </ion-content>
+</ion-view>

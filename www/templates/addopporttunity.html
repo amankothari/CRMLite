@@ -1,0 +1,90 @@
+﻿<ion-view view-title="Add Apportunity">
+
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <button class="button button-icon icon ion-checkmark" style="color:white" type="submit" ng-click="Save(oppoData)"></button>
+    </ion-nav-buttons>
+    <style>
+        .tabs-top > .tabs, .tabs.tabs-top {
+            top: inherit !important;
+            padding-top: initial !important;
+            background-color: #E2E2E2 !important;
+        }
+    </style>
+        <form name="userForm" novalidate="novalidate" on-valid-submit="Save(oppoData)">
+                    <ion-content style="top: 44px;background-color: rgb(240, 240, 240);">
+                        <div class="list">
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label" style="color:blue">Select Account Name</span>
+                                <input type="text" ng-model="oppoData.parentaccountname" value="oppoData.parentaccountid" ng-click="fetchaccount(index)">
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label" style="color:blue">Select Customer Name</span>
+                                <input type="text" ng-model="oppoData.parentcontactname" value="oppoData.parentcontactid" ng-click="fetchcontact(index)">
+                            </label>
+                            <br />
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label" style="color:blue">Topic</span>
+                                <input type="text" ng-model="oppoData.name">
+                            </label>  <br />  
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Budget Amount</span>
+                                <input type="number" ng-model="oppoData.budgetamount">
+                            </label>                                                  
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Est. Revenue</span>
+                                <input type="number" ng-model="oppoData.estimatedvalue">
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Est. Close Date</span>
+                                <input type="datetime-local" ng-model="oppoData.estimatedclosedate">
+                            </label>
+                            <label class="item item-input item-select" style="font-weight:500" ng-hide="Secondtime" >
+                                <div class="input-label">
+                                    Status
+                                </div>
+                                <select ng-model="oppoData.statuscode">
+                                    <option value="1">Open</option>
+                                    <option value="3">Won</option>
+                                    <option value="4">Lost</option>
+                                </select>                    
+                            </label>
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Purchase Timeframe
+                                </div>
+                                    <select ng-model="oppoData.purchasetimeframe" tabindex="0">
+                                        <option selected>Unassign Value</option>
+                                        <option value="0">Immediate</option>
+                                        <option value="1">This Quarter</option>
+                                        <option value="2">Next Quarter</option>
+                                        <option value="3">This Year</option>
+                                        <option value="4">Unknown</option>
+                                    </select>                             
+                            </label>
+
+                                <label class="item item-input item-select" style="font-weight:500">
+                                    <div class="input-label">
+                                        Purchase Process
+                                    </div>
+                                    <select ng-model="oppoData.purchaseprocess" tabindex="1"> 
+                                        <option selected="selected">Unassign Value</option>
+                                        <option value="0">Individual</option>
+                                        <option value="1">Committee</option>
+                                        <option value="2">Unknown</option>
+                                    </select>                                 
+                                </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Description</span>
+                                <textarea type="text" ng-model="oppoData.description" style="border: 1px solid rgb(211, 208, 208);margin-right: 70px;"></textarea>
+                            </label>
+                            <br />
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Customer Need</span>
+                                <textarea type="text" ng-model="oppoData.customerneed" style="border: 1px solid rgb(211, 208, 208);margin-right: 70px;"></textarea>
+                            </label>
+                            
+                        </div>
+                    </ion-content>              
+        </form>
+  
+</ion-view>
