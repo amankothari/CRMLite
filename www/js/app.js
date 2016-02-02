@@ -7,7 +7,7 @@ Xrm.CRMAuth = Xrm.CRMAuth || { __namespace: true };
 // 'starter.controllers' is found in controllers.js
 var starter = angular.module('starter', ['angles', 'ionic','ionic.service.core', 'ngCordova', 'starter.controllers', 'starter.services', 'starter.directive', 'starter.filter', 'LocalStorageModule', 'ngMessages', 'ngAutocomplete'])
 
-.run(function ($ionicPlatform) {  
+.run(function ($ionicPlatform, $rootScope, $cordovaNetwork, $ionicPopup) {
     $ionicPlatform.ready(function () {
         var io = Ionic.io();
         var push = new Ionic.Push({
