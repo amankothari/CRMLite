@@ -50,17 +50,17 @@ starter.controller('SignupController', function ($ionicPopup, $http, $scope, $io
                 "mobile": loginData.mobile,              
                 "Active":'0'
             };
-            $http.post('http://easycrm.webfortis.in/api/crm', $scope.UserSession).then(function (successData) {
-                    if (successData.status == 200) {                       
+            //$http.post('http://easycrm.webfortis.in/api/crm', $scope.UserSession).then(function (successData) {
+                    //if (successData.status == 200) {                       
                         getsetService.Setdata($scope.UserSession);
                         $rootScope.hide();
                         $window.location.href = ('#/app/signin');
-                    }                      
-                    else {          
-                        $rootScope.hide();
-                        $scope.showAlert();
-                    }
-                })
+                //    }                      
+                //    else {          
+                //        $rootScope.hide();
+                //        $scope.showAlert();
+                //    }
+                //})
             }
     }
 })
