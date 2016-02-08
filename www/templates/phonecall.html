@@ -1,0 +1,44 @@
+﻿<ion-view view-title="Phone Calls">
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon icon ion-plus" title="Add Phone Call" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddphonecall()"></a>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <input type="search"
+               placeholder="Filter Phone call..."
+               ng-model="search"
+               class="full-width">
+    </ion-header-bar>
+    <style>
+        
+        /*.font {
+            margin-top: 0px !important;
+            font-size: 25px !important;
+        }*/
+        .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
+        font-size: 27px !important;
+         }
+    </style>
+    <ion-content overflow-scroll="true">
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <ion-list class="list" style="margin-bottom: 10px !important;" >
+            <div collection-repeat="item in arrey| filter:search" ng-click="Details(item)">
+                <a class="item item-icon-right" href="" style="padding-bottom: 10px; padding-top: 10px; background-color: #EEEEEE;color: black;">
+                    <i class="icon ion-ios-book-outlinedfs"></i>
+                    {{item.subject}}
+                    <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                </a>
+                <div class="row">
+                    <div class="col-80" style="color: rgb(123, 113, 113)!important;text-align: left;margin-left: 15px!important;">
+                        <strong style="vertical-align: super;color:rgb(50, 166, 78);"> From :&nbsp;{{item.from}}</strong><br />
+                        <strong style="vertical-align: super;color:rgb(50, 166, 78);"> To :&nbsp;{{item.to}}</strong>
+                    </div>
+                    <div class="col-20" style="color: rgb(123, 113, 113)!important;padding-right: 10px;padding-top: 7px;">
+                        <a class="button button-positive1" ng-href="tel:{{item.phonenumber}}" style="width: 60px!important;">
+                            <img src="img/icon/phone.png" style="width:40px" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

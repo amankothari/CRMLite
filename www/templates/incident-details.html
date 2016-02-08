@@ -1,0 +1,42 @@
+﻿<ion-view title="My Case">
+    <ion-content has-header="true" padding="true">
+    </ion-content>
+    <ion-content>
+        <div class="list">
+            <div class="list">
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="img/user.png">
+                    <h2 style="font-size: 21px!important;">{{singlecase.title}}</h2>
+                    <p>  Case Ticket No. : {{singlecase.ticketnumber=="" ? "0.00":singlecase.ticketnumber}}</p>
+                </a>
+            </div>  
+            <span class="item">
+               Customer Name : <br /> {{singlecase.customerid}}
+            </span>
+            <span class="item">
+                Subject :<br /> <span style="white-space:pre-line">{{singlecase.subjectid}}</span>
+            </span>
+            <span class="item">
+                transaction Currency : <span style="color:blue">&nbsp;&nbsp;{{singlecase.transactioncurrencyid}}</span>
+            </span>
+            <div class="item item-divider" style="background-color: #E8E8E8;">
+               OWNER INFORMATION
+            </div>
+            <span class="item">
+                Owner :<br /> {{singlecase.ownerid}}
+            </span>
+            <span class="item">
+                Created date :<br /> {{singlecase.createdon|date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Created by :<br /> {{singlecase.createdby}}
+            </span>
+            <span class="item">
+                Updated date :<br /> {{singlecase.modifiedon|date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Updated by :<br /> {{singlecase.modifiedby}}
+            </span>
+        </div>
+    </ion-content>
+</ion-view>

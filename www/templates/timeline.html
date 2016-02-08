@@ -1,0 +1,73 @@
+﻿<ion-view view-title="Timeline">
+    <!--<ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon icon ion-plus" title="Add Phone Call" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddphonecall()"></a>
+    </ion-nav-buttons>-->
+    <style>
+        .hero {
+            background-size: cover;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+            color: #fff;
+            height: 200px;
+            position: relative;
+            text-align: center;
+            -webkit-transition: all 1s cubic-bezier(.55,0,.1,1);
+            transition: all 1s cubic-bezier(.55,0,.1,1);
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            width: 100%;
+        }
+        .hero>.content {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+        .hero>.content>.avatar {
+    background-position: center;
+    background-size: cover;
+    border: solid 1px rgba(255,255,255,.8);
+    border-radius: 50%;
+    display: inline-block;
+    height: 88px;
+    left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    width: 88px;
+}
+    </style>
+  
+        <div class="hero" style="background-image: url('img/Slider/timeline.png');">
+            <div class="content" style="text-align:right">
+                <h3 style="padding-right: 10px;"><a class="light">{{authentication.User}}</a></h3>
+                <!--<h4 style="padding-right: 10px;">{{authentication.username}}</h4>-->
+            </div>
+        </div>
+        <div class="tabs backcolor tabs-icon-top static" style="bottom: initial!important; box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);">
+            <a class="tab-item" href="#/app/opportunity/">
+                <i class="icon ion-arrow-graph-up-right"></i> Opportinuty
+            </a>
+            <a class="tab-item" href="#/app/contact/">
+                <i class="icon ion-android-people"></i> Contact
+            </a>
+            <a class="tab-item" href="#/app/account/">
+                <i class="icon ion-person"></i> Account
+            </a>
+        </div>
+    <ion-content style="margin-top: 203px;">
+        <div class="list">
+            <div class="item item-icon-right item-divider" style="padding-bottom: 15px; padding-top: 15px;">
+                <h2>What's New</h2><i class="icon ion-android-refresh2" ng-click="Refresh()" style="color: #C9C9C9;font-size: 24px;"><a class="button button-icon ion-refresh" style="color: rgb(70, 126, 190);font-size: 23px;"></a></i>
+            </div>
+        </div>
+        <ion-list class="list">
+            <ion-item class="item item-thumbnail-left" ng-repeat="data in Data| orderBy: 'data.attributes.createdon.formattedValue' ">
+                <img src="{{data.attributes.regardingobjectid.logicalName|filterimage}}">
+                <h2>{{data.attributes.regardingobjectid.name}}</h2><span style="color:black; white-space:pre-line">{{data.attributes.regardingobjectid.logicalName}}:created by {{authentication.User}} </span>
+                <span style="color:black; white-space:pre-line"><br /> Created : {{data.attributes.createdon.formattedValue}}</span>
+            </ion-item>
+          
+        </ion-list><ion-infinite-scroll on-infinite="loadMore()" spinner-class="spinner-dark" distance="2%">
+</ion-infinite-scroll>
+    </ion-content>
+</ion-view>

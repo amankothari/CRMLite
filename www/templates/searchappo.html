@@ -1,0 +1,56 @@
+﻿<ion-view view-title="">
+    <style>
+        .custome {
+            padding-left: 21px!important;
+            padding-top:0px!important;
+            color: #FFFFFF!important;
+            font-size: 17px!important;
+            background-color: transparent;
+            border-bottom: 2px solid white!important;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            width:240px;
+        }
+        -webkit-input-placeholder { 
+        color:   #FFFFFF;
+      }
+        
+
+-webkit-input-placeholder {
+    color: white;
+}-moz-placeholder {
+
+    color: white;
+}
+-moz-placeholder {
+
+    color: white;
+}
+-ms-input-placeholder {
+    color: white;
+}
+    </style>
+    <ion-nav-buttons side="right" style="width:100%">
+        <input class="custome" type="search" placeholder="Search" ng-model="search" ng-change='Filter(search)'>
+    </ion-nav-buttons>
+    <p id="p1" style="margin-top: 70px !important" ng-if="!Showdata">
+        <ion-spinner icon="android"></ion-spinner>
+    </p>
+    <ion-content overflow-scroll="true">     
+        <ion-list class="list" style="margin-bottom: 10px !important;">
+            <div collection-repeat="item in arrey">
+                <ion-item click-for-options class="item item-icon-right" href="" ng-click="Details(item)" style="background-color: #EEEEEE;color: black;">
+                    {{item.name}}
+                    <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                    <ion-option-button click-for-options class="button-positive" ng-click="Edit(item.opportunityid)">&nbsp;Edit &nbsp;</ion-option-button>
+                </ion-item>
+                <div class="row">
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.budgetamount}}</strong><br />Deal Size</div>
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.estimatedclosedate | date:'MM/dd/yyyy'}}</strong><br />Close Date</div>
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.stepname}}</strong><br />Stage</div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>   
+    <p ng-if="showfound" style="margin: 0 0 10px;color: black;text-align: center;padding: 100px;">No result found, Please try again with diffrent word.</p> 
+</ion-view>

@@ -1,0 +1,27 @@
+﻿<ion-view view-title="My Task">
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon icon ion-plus" title="Add account" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddtask()"></a>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <input type="search"
+               placeholder="Filter Task..."
+               ng-model="search"
+               class="full-width">
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <ion-list class="list">
+            <div class="item item-divider" style="background-color: #E8E8E8;">
+               Open Task
+            </div>
+            <a class="item item-icon-left item-icon-right" href="#" style="padding-left: 20px!important; padding-top: 9px; padding-bottom: 9px; color: black;"
+               collection-repeat="item in arrey | filter:search" ng-click="Details(item)">               
+                {{item.subject}}<br />
+                <strong style="vertical-align: sub;color:red;font-size:13px">Due Date : {{item.scheduledend==""?"00/00/0000" :item.scheduledend | date:'MM/dd/yyyy'}}</strong><br />
+                <span style="vertical-align: sub;color:#888383;font-size:13px">Assigned to : {{item.ownerid}}</span><br />
+                <span style="color:#888383;font-size:13px; text-align:right">Duration :&nbsp;{{item.actualdurationminutes==""?"Duration Unknown" :item.actualdurationminutes}}</span><br />
+               <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+            </a>
+        </ion-list>
+        </ion-content>
+</ion-view>

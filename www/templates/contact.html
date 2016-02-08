@@ -1,0 +1,36 @@
+﻿<ion-view view-title="Contact" style="left:0px!important">  
+    <ion-nav-buttons side="right" >
+        <a class="button button-icon icon ion-plus" title="Add contact" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddcontact()"></a>
+        <a class="button button-icon icon ion-search" style="color:white" href="#/app/searchcontact"></a>
+    </ion-nav-buttons>
+    <style>
+       .padding {
+padding-left: 0px!important;
+        }
+  .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+/*padding-left: 70px !important;*/
+min-height: 0px !important;
+padding-bottom: 12px!important;
+}
+    </style> 
+    <ion-content overflow-scroll="true" ng-init="fire()">
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <div>
+            <ion-list>
+                <ion-item click-for-options class="item item-icon-left item-icon-right" collection-repeat="item in arrey" ng-click="Details(item)" type="item-text-wrap">
+                    <i class="icon ion-ios-folder-outlinezzz"><span class="stbtn" style="background-color:{{item.Name|filtercolor}}"><span class="stbase">{{item.Name| alphabet}}</span></span></i>
+                    <h2 style="padding-left: 20px;">{{item.Name}}</h2>
+                    <span style="padding-left: 22px;">{{item.jobtitle}}</span>
+                    <p style="padding-left: 18px;">
+                        <a><img src="img/icon/map.png" style="width: 20px" />
+                       {{item.address}}</a>
+                    </p>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                    <ion-option-button click-for-options class="button-positive" ng-click="Edit(item.contactid)">&nbsp;Edit &nbsp;</ion-option-button>
+                </ion-item>
+                <ion-infinite-scroll on-infinite="loadMore()" spinner="spinner-dark" distance="3%">                 
+                </ion-infinite-scroll>
+            </ion-list>
+
+        </div>     
+</ion-view>

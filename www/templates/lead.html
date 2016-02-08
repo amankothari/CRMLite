@@ -1,0 +1,35 @@
+﻿<ion-view view-title="Lead">
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon icon ion-plus" title="Add account" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddlead()"></a>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-light bar-subheader">
+        <input type="search"
+               placeholder="Filter lead..."
+               ng-model="search"
+               class="full-width">
+    </ion-header-bar>
+    <style>
+        .paaingleft {
+        }
+    </style>
+    <ion-content>
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <div>
+            <ion-list class="list"  style="margin-bottom: 10px !important;" >
+                <div collection-repeat="item in arrey | filter:search">
+                    <ion-item class="item  item-icon-right" href="" ng-click="Details(item)">
+                        <i class="icon ion-ios-book-outlinedfs"></i>
+                        {{item.fullname}}
+                        <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                        <ion-option-button class="button-positive" ng-click="Edit(item.leadid)">&nbsp;Edit &nbsp;</ion-option-button>
+                    </ion-item>
+                    <div class="row" style="padding-bottom:10px">
+                        <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.diffDays}}&nbsp;days</strong><br />Updated</div>
+                        <!--<div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.budgetamount=="" ? "0.00":item.budgetamount}}</strong><br />Deal Ammount</div>-->
+                        <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.revenue=="" ? "0.00":item.revenue}}</strong><br />Revenue Size</div>
+                        <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.statecode=="0" ? "Open":item.statecode}}</strong><br />Stage</div>
+                    </div>
+                </div>
+            </ion-list>
+        </div>
+</ion-view>

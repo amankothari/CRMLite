@@ -1,0 +1,65 @@
+﻿<ion-view title="Opportunity Details">
+    <ion-content has-header="true" padding="true">
+    </ion-content>
+    <ion-content>
+        <div class="list">
+            <div class="list">
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="img/opportunitydetails.png">
+                    <h2 style="font-size: 21px!important;">{{singlelead.name}}</h2>
+                    <p> Total Budget : {{singlelead.budgetamount=="" ? "0.00":singlelead.budgetamount}}<span style="color:blue">&nbsp;{{singlelead.transactioncurrencyid}}</span></p>
+                    <p> Total Amount : {{singlelead.totalamount=="" ? "0.00":singlelead.totalamount}}<span style="color:blue">&nbsp;{{singlelead.transactioncurrencyid}}</span></p>
+                </a>
+            </div>  
+           
+            <span class="item">
+                Stage : {{singlelead.stepname}}
+            </span>
+          
+            <span class="item" >
+                Customer Requirement : <br /> <span style="white-space:pre-line">{{singlelead.customerneed}}</span>
+            </span>         
+            <span class="item">
+                Close Probability :{{singlelead.closeprobability}}&nbsp;Days
+            </span>
+            <span class="item">
+                Complete Internal Review : {{singlelead.completeinternalreview}}
+            </span>
+
+            <span class="item">
+                Complete Final Proposal : {{singlelead.completefinalproposal}}
+            </span>
+            <span class="item">
+               Total Discount Amount :<br /> {{singlelead.totaldiscountamount}}<span style="color:blue">&nbsp;{{singlelead.transactioncurrencyid}}</span>
+            </span>
+            <span class="item">
+                Description :<br /><span style="white-space:pre-line">{{singlelead.description}}</span> 
+            </span>
+            <div class="item item-divider" style="background-color: #E8E8E8;">
+                OWNER INFORMATION
+            </div>
+            <span class="item">
+                Campaign :{{singlelead.campaignid}}
+            </span>
+            <span class="item">
+                Contact :{{singlelead.parentcontactid}}
+            </span>
+            <span class="item">
+                Account :{{singlelead.parentaccountid}}
+            </span>
+           
+            <span class="item">
+                Owner Name :{{singlelead.ownerid}}
+            </span>
+            <span class="item">
+               Created date :{{singlelead.createdon|date:'MM/dd/yyyy'}}
+            </span>
+            <span class="item">
+                Created by :{{singlelead.createdby}}
+            </span>
+            <span class="item">
+                Updated date :{{singlelead.modifiedon|date:'MM/dd/yyyy'}}
+            </span>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Campaign">
+    <ion-header-bar class="bar-light bar-subheader">
+        <input type="search"
+               placeholder="Filter Campaigns..."
+               ng-model="search"
+               class="full-width">
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+            <div class="list" style="margin-bottom: 10px !important;" collection-repeat="item in arrey | filter:search" ng-click="Details(item)">
+                <a class="item item-icon-right" href="" style="padding-bottom: 10px; padding-top: 10px; background-color: #EEEEEE;color: black; ">
+                    
+                    {{item.name}}
+                    <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                </a>
+                <div class="row" style="padding-bottom:10px">
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.budgetedcost=="" ? "0.00":item.budgetedcost}}</strong><br />Budgeted Cost</div>
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.actualstart=="" ? "00/00/0000":item.actualstart |date:'MM/dd/yyyy'}}</strong><br />Start date</div>
+                    <div class="col" style="color: rgb(123, 113, 113)!important;text-align: center;"><strong style="vertical-align: super;color:rgb(50, 166, 78);">{{item.actualend=="" ? "00/00/0000":item.actualend |date:'MM/dd/yyyy'}}</strong><br />End date</div>
+                </div>             
+            </div>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

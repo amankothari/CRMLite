@@ -1,0 +1,115 @@
+﻿<ion-view view-title="Add Phone Call">
+
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <button class="button button-icon icon ion-checkmark" style="color:white" type="submit" ng-click="Save(phoneData)"></button>
+    </ion-nav-buttons>
+    <style>
+        .tabs-top > .tabs, .tabs.tabs-top {
+            top: inherit !important;
+            padding-top: initial !important;
+            background-color: #E2E2E2 !important;
+        }
+    </style>      
+    <ion-content style="top: 44px;background-color: rgb(240, 240, 240);">
+        <form name="userForm" novalidate="novalidate" on-valid-submit="Save(phoneData)">
+            <div class="list">
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">From</span>
+                    <input type="text" readonly ng-model="phoneData.from.from" value="phoneData.from.fromid" ng-click="popover.show($event)" />
+                    <i style="margin-right:10px" class="icon ion-chevron-down"></i>
+                </label><br />
+                <script id="templates/popover.html" type="text/ng-template" style="background-image:url(img/translucent.png)">
+                    <ion-popover-view class="custom" style="margin-left:20%;margin-right:20%">
+                        <ion-content>
+                            <ion-list>
+                                <div class="item item-divider">
+                                    <h2 style="text-align:center;color:blue;font-weight:500">Choose From Activity</h2>
+                                </div>
+                                <ion-item ng-repeat="org in Entity" class="list">
+                                    <a class="item" href="" style="text-align:center" ng-click="fetchaccounttask(org.entity,$event,'from')">
+                                        {{org.entity}}
+                                    </a>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ion-popover-view>
+                </script>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">To</span>
+                    <input type="text" readonly ng-model="phoneData.to.to" value="phoneData.to.toid" ng-click="popover1.show($event)" />
+                    <i style="margin-right:10px" class="icon ion-chevron-down"></i>
+                </label><br />
+                <script id="templates/popover1.html" type="text/ng-template" style="background-image:url(img/translucent.png)">
+                    <ion-popover-view class="custom" style="margin-left:20%;margin-right:20%">
+                        <ion-content>
+                            <ion-list>
+                                <div class="item item-divider">
+                                    <h2 style="text-align:center;color:blue;font-weight:500">Choose To Activity</h2>
+                                </div>
+                                <ion-item ng-repeat="org in Entity" class="list">
+                                    <a class="item" href="" style="text-align:center" ng-click="fetchaccounttask(org.entity,$event,'to')">
+                                        {{org.entity}}
+                                    </a>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ion-popover-view>
+                </script>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">Regarding</span>
+                    <input type="text" readonly ng-model="phoneData.regarding.regardingobjectname" value="phoneData..regardingobjectid" ng-click="popover2.show($event)" />
+                    <i style="margin-right:10px" class="icon ion-chevron-down"></i>
+                </label><br />
+                <script id="templates/popover2.html" type="text/ng-template" style="background-image:url(img/translucent.png)">
+                    <ion-popover-view class="custom" style="margin-left:20%;margin-right:20%">
+                        <ion-content>
+                            <ion-list>
+                                <div class="item item-divider">
+                                    <h2 style="text-align:center;color:blue;font-weight:500">Choose Regarding Activity</h2>
+                                </div>
+                                <ion-item ng-repeat="org in Entity" class="list">
+                                    <a class="item" href="" style="text-align:center" ng-click="fetchaccounttask(org.entity,$event,'regarding')">
+                                        {{org.entity}}
+                                    </a>
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ion-popover-view>
+                </script>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label" style="color:blue">Subject</span>
+                    <input type="text" ng-model="phoneData.subject" />
+                </label>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">Duration</span>
+                    <input placeholder="in minutes" type="number" ng-model="phoneData.actualdurationminutes" />
+                </label>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">Phone Number</span>
+                    <input placeholder="mobile number" type="tel" ng-model="phoneData.phonenumber" />
+                </label><br />
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">Due Date</span>
+                    <input type="datetime-local" ng-model="phoneData.scheduledend" />
+                </label>
+                <label class="item item-input" style="font-weight:500">
+                    <span class="input-label">Description</span>
+                    <textarea type="text" ng-model="phoneData.description" style="border: 1px solid rgb(211, 208, 208);margin-right: 70px;"></textarea>
+                </label>
+
+                <!--<label class="item item-input item-select" style="font-weight:500">
+            <div class="input-label">
+                Priority
+            </div>
+            <select ng-model="leadData.leadqualitycode">
+                <option value="0">Low</option>
+                <option value="1">Normal</option>
+                <option value="2">High</option>
+            </select>
+        </label>-->
+                <br />
+            </div>
+        </form>
+    </ion-content>            
+      
+</ion-view> 

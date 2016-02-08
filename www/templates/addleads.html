@@ -1,0 +1,120 @@
+﻿<ion-view view-title="{{addl}}">
+
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <button class="button button-icon icon ion-checkmark" style="color:white" type="submit" ng-click="Save(leadData)"></button>
+    </ion-nav-buttons>
+    <style>
+        .tabs-top > .tabs, .tabs.tabs-top {
+            top: inherit !important;
+            padding-top: initial !important;
+            background-color: #E2E2E2 !important;
+        }
+    </style>
+    <ion-tabs class="tabs-stable tabs-icon-top" style="background-color: #DBDBDB;">
+        <form name="userForm" novalidate="novalidate" on-valid-submit="Save(leadData)">
+            <ion-tab title="Info" icon="ion-android-home">
+                <ion-nav-view>
+                    <ion-content style="top: 44px;background-color: rgb(240, 240, 240);margin-bottom: 35px;">
+                        <div class="list">
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label" style="color:blue">Topic</span>
+                                <input type="text" ng-model="leadData.subject" >
+                            </label>
+                           
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">First Name</span>
+                                <input type="text" ng-model="leadData.firstname"/>
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Last Name</span>
+                                <input type="text" ng-model="leadData.lastname"/>
+                            </label> 
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Job Title</span>
+                                <input type="text" ng-model="leadData.jobtitle">
+                            </label>                        
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Email</span>
+                                <input type="text" ng-model="leadData.emailaddress1">
+                            </label>
+                           
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Mobile Phone</span>
+                                <input type="tel" ng-model="leadData.telephone1">
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Business Phone</span>
+                                <input type="tel" ng-model="leadData.mobilephone">
+                            </label>
+                            
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Est. Close Date</span>
+                                <input type="datetime-local" ng-model="leadData.estimatedclosedate"><i style="margin-right:10px" class="icon ion-chevron-down"></i>
+                            </label>
+                            <br />
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Company Name</span>
+                                <input type="text" ng-model="leadData.companyname" />
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Website</span>
+                                <input type="text" ng-model="leadData.websiteurl" />
+                            </label>
+                            <label class="item item-input" style="font-weight:500">
+                                <span class="input-label">Annual Revenue</span>
+                                <input type="tel" ng-model="leadData.revenue">
+                            </label>
+                                <label class="item item-input item-select" style="font-weight:500">
+                                    <div class="input-label">
+                                        Rating
+                                    </div>
+                                    <select ng-model="leadData.leadqualitycode">
+                                        <option value="1">Hot</option>
+                                        <option value="2">Warm</option>
+                                        <option value="3">Cold</option>
+                                    </select>
+                                </label>
+                            <br />
+                        </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Address" icon="ion-map">
+                <ion-nav-view>
+                    <ion-content style="top: 44px;background-color: rgb(240, 240, 240);">
+                        <div class="item item-divider">
+                            <h2 style="text-align:center;color:blue;font-weight:500">Address Information</h2>
+                        </div>
+                        <div class="list">                          
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">Street 1</span>
+                                <input type="text" ng-model="leadData.address1_line1">
+                            </label>
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">Street 2</span>
+                                <input type="text" ng-model="leadData.address1_line2">
+                            </label>
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">Street 3</span>
+                                <input type="text" ng-model="leadData.address1_line3">
+                            </label>
+                            <br />
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">City</span>
+                                <input type="text" ng-model="leadData.city">
+                            </label>
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">Zip/Postal Code</span>
+                                <input type="text" ng-model="leadData.address1_postalcode">
+                            </label>
+                            <label class="item item-input " style="font-weight:500">
+                                <span class="input-label">Country</span>
+                                <input type="text" ng-model="leadData.address1_country">
+                            </label>
+                        </div>
+                    </ion-content>
+                </ion-nav-view>
+            </ion-tab>
+        </form>
+    </ion-tabs>
+</ion-view>

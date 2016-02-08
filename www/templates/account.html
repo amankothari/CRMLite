@@ -1,0 +1,22 @@
+﻿<ion-view view-title="Account">
+    <ion-nav-buttons side="right" enable-menu-with-back-views="false">
+        <a class="button button-icon icon ion-plus" title="Add account" info="popover" info_place="bottom" style="color:white" ng-click="Gotoaddaccount()"></a>
+        <a class="button button-icon icon ion-search" style="color:white" href="#/app/searchaccounts"></a>
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true" ng-init="fire()">          
+            <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <ion-list class="list">
+            <ion-item click-for-options class="item item-icon-left item-icon-right" href="" style="color: black;"
+                      collection-repeat="item in arrey" ng-click="Details(item)">             
+                <i class="icon ion-ios-folder-outlinezzz"><span class="stbtn" style="background-color:{{item.Name|filtercolor}};"><span class="stbase">{{item.Name| alphabet}}</span></span></i>
+                {{item.Name}}<br />
+                <span style="vertical-align: sub;color:rgb(50, 166, 78);font-size:13px">{{item.revenue=="" ? "0.00":item.revenue}}</span><br />
+                <span style="color:#373737 ; font-size:13px">Total Revenue</span>
+                <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                <ion-option-button click-for-options class="button-positive" ng-click="Edit(item.accountid)">&nbsp;Edit &nbsp;</ion-option-button>
+            </ion-item> 
+            <ion-infinite-scroll on-infinite="loadMore()" spinner-class="spinner-dark" distance="1%">    
+            </ion-infinite-scroll>
+     </ion-list>
+    </ion-content>    
+</ion-view>

@@ -1,0 +1,102 @@
+<style>
+    /*.item-icon-left {
+        padding-left: 10px !important;
+    }*/
+
+    .backcolor {
+        background-color: #2586C6 !important;
+         border-color: transparent !important;
+        color: white;
+    }
+
+    .h3 {
+        background-color: white;
+    }
+
+    .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+        padding-left: 55px !important;
+        min-height: 0px !important;
+        padding-bottom: 19px;
+    }
+</style>
+
+<ion-side-menus enable-menu-with-back-views="false" class="backcolor">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable backcolor">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <!--<ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>-->
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear" style="color:white" ng-class="$ionicSideMenuDelegate.isOpen() ? 'ion-arrow-left-c' : 'ion-navicon'" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" class="backcolor">
+        <ion-content>
+            <ion-list>
+                <div class="list card" style="margin: 0px 0px!important;">
+                        <a class="item item-avatar" menu-close href="#/app/timeline" style="box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.26); height: 70px;">
+                            <img src="img/user.png" class="company-logo" />
+                            <h1 style="color:black;margin-left: 15px;font-size: 22px;margin-top: 0px;" >{{authcheck.User}}</h1>
+                        </a>
+                </div>
+            </ion-list>          
+              <ion-list>
+                        <!--<span class="item item-header margin-top-15 backcolor">
+                    <h1 class="title"><img src="img/crmlogo.png" class="company-logo" /></h1>
+                </span>-->
+                        <div class="list">
+                            <a class="item item-avatar backcolor" menu-close href="#/app/home" ng-show="authcheck.isvisible">
+                                <img src="img/home.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Home</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/account/" ng-show="authcheck.isvisible">
+                                <img src="img/Accounts.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Account</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/contact/" ng-show="authcheck.isvisible">
+                                <img src="img/Contacts.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Contacts</h2>
+                            </a>
+                            <!--<a class="item item-avatar backcolor" menu-close href="#/app/incident" ng-show="authcheck.isvisible">
+                        <img src="img/Case.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                        <h2 style="color: white;">Case</h2>
+                    </a>-->
+                            <a class="item item-avatar backcolor" menu-close href="#/app/lead/" ng-show="authcheck.isvisible">
+                                <img src="img/Leads.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Leads</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/campaigns/" ng-show="authcheck.isvisible">
+                                <img src="img/Campaigns.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Quick Campaigns</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/opportunity/" ng-show="authcheck.isvisible">
+                                <img src="img/opportunity.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Opportunity</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/phonecall/" ng-show="authcheck.isvisible">
+                                <img src="img/PHONECALL.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Phone Call</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/task/" ng-show="authcheck.isvisible">
+                                <img src="img/Task.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Task</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close href="#/app/signin/" ng-show="!authcheck.isvisible">
+                                <img src="img/Logout.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Log In</h2>
+                            </a>
+                            <a class="item item-avatar backcolor" menu-close ng-click="logout()" ng-show="authcheck.isvisible">
+                                <img src="img/Logout.png" style="max-width: 28px; max-height: 24px; border-radius: 10%;left: 7px;">
+                                <h2 style="color: white;">Log Out</h2>
+                            </a>
+                        </div>
+
+                    </ion-list>
+                </ion-content>
+                <ion-footer-bar class="backcolor"><span style="color:white;font-size:12px; text-align:center;width:100%"> @ MoreYeahs Inc. All rights reserved.</span></ion-footer-bar>
+</ion-side-menu>
+</ion-side-menus>

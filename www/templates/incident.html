@@ -1,0 +1,22 @@
+﻿<ion-view view-title="Case">
+    <ion-header-bar class="bar-light bar-subheader">
+        <input type="search"
+               placeholder="Filter Case..."
+               ng-model="search"
+               class="full-width">
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="doRefresh()" spinner="spiral"></ion-refresher>
+        <div>
+            <div class="list">
+                <a class="item item-icon-left item-icon-right" href="#" style="padding-left: 31px!important;padding-top: 9px; padding-bottom: 9px; color: black;"
+                   collection-repeat="item in arrey | filter:search" ng-click="Details(item)">
+                    <i class="icon ion-ios-book-outlinecvbcx"></i>
+                    {{item.title}}<br />
+                    <span style="vertical-align: sub;color:rgb(50, 166, 78);font-size:13px">{{item.ticketnumber=="" ? "NO Ticket Found":item.ticketnumber}}</span><br />
+                    <span style="color:#373737 ; font-size:13px">Ticket Number</span>
+                    <i class="icon ion-ios-arrow-forward" style="color: #C9C9C9;font-size: 24px;"></i>
+                </a>
+            </div>
+        </div>
+</ion-view>
